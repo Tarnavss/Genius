@@ -42,6 +42,11 @@
 
 }
 
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     color: var(--color-primary-dark);
     font-family: poppins, sans-serif;
@@ -56,12 +61,16 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* base */
+
 ul{
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
 .section {
     padding: 48px 0;
+   
 }
 
 .container {
@@ -71,13 +80,39 @@ ul{
     padding: 0 24px ;
 }
 
-.hidden {
-    position: absolute;
-    left:-1000px;
-top: auto;
-width: 1px;
-height: 1px;
-overflow: hidden;
+
+address {
+    font-style: normal;
+}
+
+
+/* header */
+/* link */
+
+.header-conteiner {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.link {color: var(--color-primary-light);
+    text-decoration: none;}
+
+.link:hover {
+    color: var(--color-brand-light);
+
 }
 
 /* button */
@@ -95,27 +130,24 @@ overflow: hidden;
     background-color: transparent;
 }
 
-address {
-    font-style: normal;
-}
-
-/* link */
-.link {color: var(--color-primary-light);
-    text-decoration: none;}
-
-.link:hover {
-    color: var(--color-brand-light);
-    font-weight: 600;
+.hidden {
+    position: absolute;
+    left:-1000px;
+top: auto;
+width: 1px;
+height: 1px;
+overflow: hidden;
 }
 
 /* hero section */
 
 .hero-section {
-padding: 272px 0;
+    padding: 272px 0;
 }
 
 .hero-title {
     margin-bottom: 0%;
+
     color: var(--color-primary-light);
  text-align: center;
  font-size: 128px;
@@ -127,9 +159,17 @@ padding: 272px 0;
 }
 
 /* adv sec */
+.advantages-section {
+    padding: 16px 0;
+    background-color: var(--color-brand-light);
+}
+
 .advantages-list {
     color: var(--color-primary-light);
-    background-color: var(--color-brand-light);
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+   
 }
 
 .advantages-item {
@@ -157,6 +197,17 @@ padding: 272px 0;
  .traditions-title {
     margin-bottom: 42px;
  }
+
+ .traditions-conteiner {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+ }
+ 
+ .traditions-content {
+max-width: 710px;
+ }
+
  .traditions-text .brand-uppercase {
     color: var(--color-brand-light);
     text-transform: uppercase;
@@ -180,6 +231,24 @@ padding: 272px 0;
  }
 
  /* format */
+
+ .formats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+ }
+
+ 
+
+ .formats-item {
+    flex-basis: calc((100% - 40px) / 3);
+ }
+
+ .format-card {
+    padding: 24px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+ }
 
  .formats-title {
     margin-bottom: 80px;
