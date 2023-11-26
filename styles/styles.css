@@ -42,7 +42,9 @@
 
 }
 
-* {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -85,6 +87,10 @@ ul{
 
 address {
     font-style: normal;
+}
+
+a {
+    display: inline-block;       /* задает размері для ссілок, как для блоков, но не растягивает их */
 }
 
 
@@ -243,17 +249,41 @@ max-width: 710px;
     margin: 0 auto 80px;        /* посередине, отступ снизу */
 
  }
- .chef-title {
-   
+ .chef-title {   
     margin-bottom: 16px;
     font-size: 40px;
     font-weight: 600;
+ }
+
+ .chefs-list {
+    display: flex;
+    gap: 40 px 30px;     /* задали расстояние между верт. карточками и гориз, на будущее добавили возможность расщирять список щефов вниз */
+    flex-wrap: wrap;
+ }
+
+ .chefs-item {
+    flex-basis: calc((100% - 30px) / 2);
+    
+ }
+
+ .chef-card {
+    display: flex;
+    gap: 30px;   
  }
 
  .chef-image {
    border-radius: 4px 4px 4px 200px;    /* задать фигуру картинки */
     box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
 }
+
+.chef-text p {      
+    margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+    margin-bottom: 0;
+}
+
 
  /* format */
 
@@ -263,13 +293,18 @@ max-width: 710px;
     gap: 20px;
  }
 
- 
+ .formats-container {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+ }
 
  .formats-item {
-    flex-basis: calc((100% - 40px) / 3);
+    flex-basis: calc((100% - 40px) / 3);      /* расчитывает размер трех элементов поровну с учетом гапов в 40пх,  */ 
  }
 
  .format-card {
+    width: 349px;
     height: 444px;
     padding: 24px;
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, #31261A 100%);
@@ -296,6 +331,7 @@ max-width: 710px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;                     /* сжатие элемента */ 
     width: 44px;
     height: 44px;
     padding: 0;
@@ -317,17 +353,69 @@ max-width: 710px;
  }
 
  /* contacts section */
+ .contacts-section {
+    padding-bottom: 96px;
+ }
+
+.contact-container {
+    display: flex;
+    gap: 32px;
+}
+
+.map {
+    flex-shrink: 0;
+    border: none;
+    border-radius: 16px;
+}
+
 .contacts-title {
     margin-bottom: 16px;
 }
 
  /* footer */
 
+ .footer {
+    padding: 32px 0;
+ }
+
+ .footer-container {
+    display: flex;
+    gap: 20px;
+ }
+
+ .footer-nav,
+ .footer-address {
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px;
+ }
+
+ .footer-logo,
+ .footer-menu { 
+    flex-grow: 1;          /* занимает по 50% пространства с другим 1 */
+ 
+}
+
+.footer-icons {
+    display: flex;
+}
+
+ .address-list,
+ .address-info {
+flex-grow: 1;
+
+ }
+
+ .footer-menu li:not(:last-child) {    /* задает маргин всем ли в меню, кроме последнего */
+    margin-bottom: 16px;
+ }
+ 
  .adres-link {
     font-size: 16px;
     font-weight: 300;
     color: var(--color-primary-light);
     text-decoration: none;
+    margin-bottom: 16px;
 
  }
 
