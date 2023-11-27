@@ -235,18 +235,18 @@ max-width: 710px;
 
  /* chefs */
  .chefs-title {
-     margin: 0 auto 80px;        /* посередине, отступ снизу */
+     margin: 0 auto 80px;        
      position: relative;
  }
 
- .chefs-title::before,             /* псевдо-элементы */
+ .chefs-title::before,             
  .chefs-title::after {
     position: absolute;
     bottom: 24px;
-    display: block;             /* сделали блоком,ю чтоб можно было задавать размеры */
+    display: block;             
     width: 352px;
     border: 2px solid #cfcfbc;
-    content: '';                  /* обязательное поле, иначе видно не будет */
+    content: '';                  
  }
 
   .chefs-title::before {
