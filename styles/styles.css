@@ -97,6 +97,14 @@ a {
 /* header */
 /* link */
 
+ header {
+    position: absolute;
+        top: 0; 
+        left: 0;
+       padding: 32px;
+        width: 100%;
+}
+
 .header-conteiner {
     display: flex;
     align-items: center;
@@ -116,7 +124,10 @@ a {
 }
 
 .link {color: var(--color-primary-light);
-    text-decoration: none;}
+    text-decoration: none;
+    transition: color 0.3s;
+}
+    
 
 .link:hover {
     color: var(--color-brand-light);
@@ -130,7 +141,11 @@ a {
     border: 2px solid var(--color-brand-light);
     border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
     font-weight: 600;
+    display: flex;
+        padding: 16px 32px;
+        align-items: flex-start;
 }
 
 .button:hover {
@@ -150,8 +165,10 @@ overflow: hidden;
 /* hero section */
 
 .hero-section {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 272px 0;
-     background-image: url('/images/image\ 1559.jpg');
+     background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%) , url('../images/image 1559.jpg');
      background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -230,8 +247,11 @@ max-width: 710px;
 
  .traditions-text .brand {
      color: var(--color-brand-light);
-
  }
+
+.image-baker {
+    border-radius: 200px 200px 0 0;
+}
 
  /* chefs */
  .chefs-title {
@@ -243,7 +263,7 @@ max-width: 710px;
  .chefs-title::after {
     position: absolute;
     bottom: 24px;
-    display: block;             /* сделали блоком,ю чтоб можно было задавать размеры */
+    display: block;             /* сделали блоком, чтоб можно было задавать размеры */
     width: 352px;
     border: 2px solid #cfcfbc;
     content: '';                  /* обязательное поле, иначе видно не будет */
@@ -318,6 +338,11 @@ max-width: 710px;
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, #31261A 100%);
     border: 1px solid lightgray;
     border-radius: 16px;
+    transition: transform 0.3s;
+ }
+
+ .format-card:hover {
+    transform: scale(1.05);
  }
 
  .formats-title {
@@ -356,6 +381,10 @@ max-width: 710px;
         background-color: var(--color-primary-dark);
  }
 
+ .carousel-button.next {
+    transform: rotate(180deg);
+ }
+
  .carousel-arrow:hover {
     fill: var(--color-primary-light);
  }
@@ -383,7 +412,15 @@ max-width: 710px;
  /* footer */
 
  .footer {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 32px 0;
+    position: relative;        /*задано для определения рамок футера, чтоб бкг закрепить в нужном месте*/
+    background-image: url('../images/foot.png');
+    background-color: var(--color-primary-dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
  }
 
  .footer-container {
@@ -410,8 +447,7 @@ max-width: 710px;
 
  .address-list,
  .address-info {
-flex-grow: 1;
-
+    flex-grow: 1;
  }
 
  .footer-menu li:not(:last-child) {    /* задает маргин всем ли в меню, кроме последнего */
@@ -424,31 +460,83 @@ flex-grow: 1;
     color: var(--color-primary-light);
     text-decoration: none;
     margin-bottom: 16px;
-
  }
 
  .adres-link:hover {
      color: var(--color-brand-light);
      font-weight: 600;}
 
-     .dani {
-        font-size: 14px;
-            font-weight: 300;
-            color: var(--color-primary-light);
-     }
+.dani {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-primary-light);
+ }
 
-     .footer {
-       background-image: url('/images/foot.png');
-       background-color: var(--color-primary-dark);
-       background-repeat: no-repeat;
-       background-size: cover;
-       background-position: center;
-     }  
+.address-icon {
+    fill: var(--color-primary-light);
+}
 
-     .address-icon {
-        fill: var(--color-primary-light);
-     }
+.address-icon:hover {
+   fill: var(--color-brand-dark);
+}
 
-     .address-icon:hover {
-        fill: var(--color-brand-dark);
-     }
+
+.footer::before,
+.footer::after {
+   position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    content: '';    
+ }
+
+.footer::before {
+    width: 180px;
+    height: 120px;
+    left: 0;
+    background-image: url('/images/bread-small.png');
+ }
+
+.footer::after {
+    width: 380px;
+    height: 190px;
+    right: 0;
+    background-image: url('/images/bread-large.png');
+}
+
+
+/* modal   */
+.backdrop {
+    position: fixed;        /* позиционирование элемента */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity  0.3s, visibility 0.3s;
+}   
+
+.backdrop.is-hidden {
+   opacity: 0;        /* модальное не видно, когда тоггл на из хидден */
+    visibility: hidden;    /* модальное пропадает полность */
+    pointer-events: none;    /*ничего нельзя нажать в окне */
+}
+
+.modal {
+    position: relative;    /* позиция для кнопки */
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    max-height: 800px;
+    background-color: var(--color-primary-light);
+    border-radius: 32px;
+}
+
+.modal-btn-close {
+    position: absolute;    /* абсолют можно двигать только в рилейтиве */
+    top: 40px;
+    right: 40px;
+}
