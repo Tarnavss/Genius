@@ -234,21 +234,29 @@ max-width: 710px;
  }
 
  /* chefs */
+ .chefs-title {
+     margin: 0 auto 80px;        /* посередине, отступ снизу */
+     position: relative;
+ }
 
  .chefs-title::before,             /* псевдо-элементы */
  .chefs-title::after {
+    position: absolute;
+    bottom: 24px;
     display: block;             /* сделали блоком,ю чтоб можно было задавать размеры */
     width: 352px;
     border: 2px solid #cfcfbc;
     content: '';                  /* обязательное поле, иначе видно не будет */
  }
 
+  .chefs-title::before {
+    left: 0;
+  }
 
-.chefs-title {
-    max-width: 520px;
-    margin: 0 auto 80px;        /* посередине, отступ снизу */
+   .chefs-title::after {
+    right: 0;
+   }
 
- }
  .chef-title {   
     margin-bottom: 16px;
     font-size: 40px;
