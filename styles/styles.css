@@ -90,7 +90,7 @@ address {
 }
 
 a {
-    display: inline-block;       /* задает размері для ссілок, как для блоков, но не растягивает их */
+    display: inline-block;     
 }
 
 
@@ -239,14 +239,14 @@ max-width: 710px;
      position: relative;
  }
 
- .chefs-title::before,             
+ .chefs-title::before,            
  .chefs-title::after {
     position: absolute;
     bottom: 24px;
-    display: block;             
+    display: block;            
     width: 352px;
     border: 2px solid #cfcfbc;
-    content: '';                  
+    content: '';                 
  }
 
   .chefs-title::before {
@@ -265,7 +265,7 @@ max-width: 710px;
 
  .chefs-list {
     display: flex;
-    gap: 40 px 30px;     /* задали расстояние между верт. карточками и гориз, на будущее добавили возможность расщирять список щефов вниз */
+    gap: 40 px 30px;    
     flex-wrap: wrap;
  }
 
@@ -308,7 +308,7 @@ max-width: 710px;
  }
 
  .formats-item {
-    flex-basis: calc((100% - 40px) / 3);      /* расчитывает размер трех элементов поровну с учетом гапов в 40пх,  */ 
+    flex-basis: calc((100% - 40px) / 3);     
  }
 
  .format-card {
@@ -339,7 +339,7 @@ max-width: 710px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;                     /* сжатие элемента */ 
+    flex-shrink: 0;                  
     width: 44px;
     height: 44px;
     padding: 0;
@@ -400,7 +400,7 @@ max-width: 710px;
 
  .footer-logo,
  .footer-menu { 
-    flex-grow: 1;          /* занимает по 50% пространства с другим 1 */
+    flex-grow: 1;          
  
 }
 
@@ -414,7 +414,7 @@ flex-grow: 1;
 
  }
 
- .footer-menu li:not(:last-child) {    /* задает маргин всем ли в меню, кроме последнего */
+ .footer-menu li:not(:last-child) {  
     margin-bottom: 16px;
  }
  
