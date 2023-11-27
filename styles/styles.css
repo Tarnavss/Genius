@@ -97,6 +97,14 @@ a {
 /* header */
 /* link */
 
+ header {
+    position: absolute;
+        top: 0; 
+        left: 0;
+       padding: 32px;
+        width: 100%;
+}
+
 .header-conteiner {
     display: flex;
     align-items: center;
@@ -116,7 +124,10 @@ a {
 }
 
 .link {color: var(--color-primary-light);
-    text-decoration: none;}
+    text-decoration: none;
+    transition: color 0.3s;
+}
+    
 
 .link:hover {
     color: var(--color-brand-light);
@@ -130,7 +141,11 @@ a {
     border: 2px solid var(--color-brand-light);
     border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
     font-weight: 600;
+    display: flex;
+        padding: 16px 32px;
+        align-items: flex-start;
 }
 
 .button:hover {
@@ -150,8 +165,10 @@ overflow: hidden;
 /* hero section */
 
 .hero-section {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 272px 0;
-     background-image: url('../images/image\ 1559.jpg');
+     background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%), url('../images/hero-background.png');
      background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -230,8 +247,11 @@ max-width: 710px;
 
  .traditions-text .brand {
      color: var(--color-brand-light);
-
  }
+
+.image-baker {
+    border-radius: 200px 200px 0 0;
+}
 
  /* chefs */
  .chefs-title {
@@ -318,6 +338,11 @@ max-width: 710px;
     background-image: linear-gradient(180deg, rgba(49, 38, 26, 0.00) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, #31261A 100%);
     border: 1px solid lightgray;
     border-radius: 16px;
+    transition: transform 0.3s;
+ }
+
+ .format-card:hover {
+    transform: scale(1.05);
  }
 
  .formats-title {
@@ -356,6 +381,10 @@ max-width: 710px;
         background-color: var(--color-primary-dark);
  }
 
+ .carousel-button.next {
+    transform: rotate(180deg);
+ }
+
  .carousel-arrow:hover {
     fill: var(--color-primary-light);
  }
@@ -383,7 +412,15 @@ max-width: 710px;
  /* footer */
 
  .footer {
+    max-width: 1440px;
+    margin: 0 auto;
     padding: 32px 0;
+    position: relative;        /*задано для определения рамок футера, чтоб бкг закрепить в нужном месте*/
+    background-image: url('../images/foot.png');
+    background-color: var(--color-primary-dark);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
  }
 
  .footer-container {
@@ -410,8 +447,7 @@ max-width: 710px;
 
  .address-list,
  .address-info {
-flex-grow: 1;
-
+    flex-grow: 1;
  }
 
  .footer-menu li:not(:last-child) {    /* задает маргин всем ли в меню, кроме последнего */
@@ -424,7 +460,6 @@ flex-grow: 1;
     color: var(--color-primary-light);
     text-decoration: none;
     margin-bottom: 16px;
-
  }
 
  .adres-link:hover {
@@ -445,9 +480,9 @@ flex-grow: 1;
        background-position: center;
      }  
 
-     .address-icon {
-        fill: var(--color-primary-light);
-     }
+.address-icon {
+    fill: var(--color-primary-light);
+}
 
      .address-icon:hover {
         fill: var(--color-brand-dark);
