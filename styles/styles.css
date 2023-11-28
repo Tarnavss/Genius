@@ -168,7 +168,7 @@ overflow: hidden;
     max-width: 1440px;
     margin: 0 auto;
     padding: 272px 0;
-     background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%) , url('../images/image 1559.jpg');
+     background-image: linear-gradient(103deg, rgba(18, 18, 17, 0.78) 2.03%, rgba(18, 18, 17, 0.60) 58.46%, rgba(18, 18, 17, 0.00) 90.36%), url('../images/hero-background.png');
      background-position: center top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -466,77 +466,56 @@ max-width: 710px;
      color: var(--color-brand-light);
      font-weight: 600;}
 
-.dani {
-    font-size: 14px;
-    font-weight: 300;
-    color: var(--color-primary-light);
- }
+     .dani {
+        font-size: 14px;
+            font-weight: 300;
+            color: var(--color-primary-light);
+     }
+
+     .footer {
+       background-image: url('../images/foot.png');
+       background-color: var(--color-primary-dark);
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center;
+     }  
 
 .address-icon {
     fill: var(--color-primary-light);
 }
 
-.address-icon:hover {
-   fill: var(--color-brand-dark);
-}
+     .address-icon:hover {
+        fill: var(--color-brand-dark);
+     }
 
-
-.footer::before,
-.footer::after {
-   position: absolute;
-    bottom: 0;
-    background-repeat: no-repeat;
-    content: '';    
- }
-
-.footer::before {
-    width: 180px;
-    height: 120px;
-    left: 0;
-    background-image: url('/images/bread-small.png');
- }
-
-.footer::after {
-    width: 380px;
-    height: 190px;
-    right: 0;
-    background-image: url('/images/bread-large.png');
-}
-
-
-/* modal   */
 .backdrop {
-    position: fixed;        /* позиционирование элемента */
+    position: fixed;
     top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: opacity  0.3s, visibility 0.3s;
-}   
+}     
 
 .backdrop.is-hidden {
-   opacity: 0;        /* модальное не видно, когда тоггл на из хидден */
-    visibility: hidden;    /* модальное пропадает полность */
-    pointer-events: none;    /*ничего нельзя нажать в окне */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .modal {
-    position: relative;    /* позиция для кнопки */
-    width: 100%;
-    max-width: 800px;
-    height: 100%;
-    max-height: 800px;
+    position: relative;
+    width: 880px;
+    height: 880px;
     background-color: var(--color-primary-light);
     border-radius: 32px;
 }
 
 .modal-btn-close {
-    position: absolute;    /* абсолют можно двигать только в рилейтиве */
+    position: absolute;
     top: 40px;
     right: 40px;
 }
