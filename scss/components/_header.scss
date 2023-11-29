@@ -1,0 +1,26 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 32px;
+    width: 100%;
+
+}
+
+.header-conteiner {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 64px;
+    flex-grow: 1;
+    justify-content: center;
+}
